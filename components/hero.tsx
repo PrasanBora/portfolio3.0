@@ -10,8 +10,8 @@ export function Hero() {
       <div className="relative w-full h-screen">
         <LiquidEther
           colors={["#6dbfb8", "#5fb0a8", "#7fd3cb"]}
-          mouseForce={20}
-          cursorSize={60}
+          mouseForce={23}
+          cursorSize={90}
           isViscous={false}
           viscous={30}
           iterationsViscous={32}
