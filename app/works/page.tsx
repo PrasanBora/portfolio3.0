@@ -22,30 +22,6 @@ export default function WorksPage() {
           ctaLabel="See related work"
         />
         <WorkCard
-          imageSrc="/images/works/storyville.png"
-          imageAlt="Case study cover"
-          eyebrow="Product Design | Web"
-          title="Portfolio Revamp 2025"
-          subtitle="Personalized, interactive developer portfolio"
-          description="A fast, subtly animated portfolio with liquid header, accessible UI, and modular case-study cards to highlight impact and process."
-          role="Software Engineer, UX"
-          duration="2025"
-          team="Solo"
-          ctaHref="/projects"
-        />
-        <WorkCard
-          imageSrc="/images/works/float-mind.png"
-          imageAlt="Immersive scene"
-          eyebrow="Engineering | XR + Web"
-          title="Interactive Work Highlights"
-          subtitle="Immersive storytelling for selected projects"
-          description="Reusable work-card layouts with gradient overlays, motion, and crisp typography—optimized for readability and performance."
-          role="Full‑stack"
-          duration="2024–2025"
-          team="Collaborative"
-          ctaHref="/projects"
-        />
-        <WorkCard
           imageSrc="/images/projects/physio-hero.png"
           imageAlt="Physiotherapy website hero"
           eyebrow="Web Development"

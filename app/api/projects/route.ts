@@ -10,7 +10,7 @@ export async function GET() {
       tags: ["Web", "Full-Stack", "Social"],
       demo: "https://linkedin-clone-x4of.onrender.com/",
       repo: "https://github.com/PrasanBora/Linkedin_clone",
-      image: "/images/projects/linkedIn.jpg",
+      image: "/images/projects/linkedIn.png",
       imageAlt: "LinkedIn Clone project preview",
     },
     {
