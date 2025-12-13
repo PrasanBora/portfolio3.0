@@ -11,7 +11,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-// import { Badge } from "@/components/ui/badge";
 
 type Project = {
   id: string;
@@ -31,11 +30,6 @@ export function ProjectsGrid() {
   const { data = [], isLoading } = useSWR<Project[]>("/api/projects", fetcher);
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
-  // const allTags = useMemo(() => {
-  //   const t = new Set<string>();
-  //   data.forEach((p) => p.tags.forEach((tag) => t.add(tag)));
-  //   return Array.from(t).sort();
-  // }, [data]);
 
   const filtered = useMemo(() => {
     return data.filter((p) => (!activeTag ? true : p.tags.includes(activeTag)));
@@ -43,26 +37,6 @@ export function ProjectsGrid() {
 
   return (
     <div className="space-y-4">
-      {/* Tags only, no search input
-      <div className="flex flex-wrap gap-2">
-        <Badge
-          variant={!activeTag ? "default" : "secondary"}
-          className="cursor-pointer"
-          onClick={() => setActiveTag(null)}
-        >
-          All
-        </Badge>
-        {allTags.map((t) => (
-          <Badge
-            key={t}
-            variant={activeTag === t ? "default" : "secondary"}
-            className="cursor-pointer"
-            onClick={() => setActiveTag((prev) => (prev === t ? null : t))}
-          >
-            {t}
-          </Badge>
-        ))}
-      </div> */}
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {isLoading ?

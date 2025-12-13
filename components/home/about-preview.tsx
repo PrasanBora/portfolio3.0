@@ -31,8 +31,9 @@ export function AboutPreview() {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
           className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed"
         >
-          I’m a software developer working on Chefadora, contributing to both the web application and mobile app. I love
-          solving complex problems, designing scalable systems, and shipping meaningful products.
+          I'm a Full-Stack Software Developer building Chefadora — a global food-tech platform that empowers millions of
+          home cooks. I love solving complex engineering challenges, improving performance, and shipping impactful
+          features at scale.
         </motion.p>
 
         <motion.div
@@ -43,11 +44,11 @@ export function AboutPreview() {
         >
           <ul className="grid md:grid-cols-2 gap-4 text-sm text-muted-foreground">
             <li className="bg-card/50 border rounded-lg p-4">
-              Developing internal automation tools that reduce manual effort.
+              Built AI-powered automation and intelligent agents to boost efficiency.
             </li>
-            <li className="bg-card/50 border rounded-lg p-4">Building scalable APIs and maintainable systems.</li>
-            <li className="bg-card/50 border rounded-lg p-4">Enhancing mobile app performance and features.</li>
-            <li className="bg-card/50 border rounded-lg p-4">Leading the end‑to‑end Cooking Mode experience.</li>
+            <li className="bg-card/50 border rounded-lg p-4">Designed scalable APIs and maintainable systems.</li>
+            <li className="bg-card/50 border rounded-lg p-4">Enhanced mobile performance and feature delivery.</li>
+            <li className="bg-card/50 border rounded-lg p-4">Led end‑to‑end Cooking Mode development.</li>
           </ul>
         </motion.div>
       </div>

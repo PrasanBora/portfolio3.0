@@ -36,7 +36,8 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
               className="text-sm text-muted-foreground">
-              Software Engineer • Problem Solver • Full-Stack Innovator
+              Software Engineer • Problem Solver • Web &amp; Mobile App
+              Developer
             </motion.span>
 
             <motion.h1
@@ -44,7 +45,11 @@ export function Hero() {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.15 }}>
-              <Typewriter text={"Hi, I'm Prasan Bora"} showCursor={false} />
+              <Typewriter
+                text={"Hi, I'm Prasan Bora"}
+                speed={250}
+                showCursor={false}
+              />
             </motion.h1>
 
             <motion.p
@@ -52,10 +57,9 @@ export function Hero() {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}>
-              I build fast, engaging full-stack web and mobile
-              experiences. Passionate about delivering high-impact solutions,
-              enhancing user experiences, and tackling complex challenges from
-              concept to completion..
+              I build fast, delightful full-stack web and mobile experiences. I
+              love shipping high-impact products, polishing UX, and solving hard
+              problems end-to-end.
             </motion.p>
           </div>
         </div>
