@@ -32,13 +32,14 @@ export function SiteHeader() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-4">
+        <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
-              className="text-sm hover:underline"
-              href={link.href}
-            >
+              className="relative text-sm text-muted-foreground hover:text-foreground transition-colors py-1
+                after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary
+                after:transition-all after:duration-300 hover:after:w-full"
+              href={link.href}>
               {link.label}
             </Link>
           ))}
@@ -59,18 +60,17 @@ export function SiteHeader() {
               <SheetHeader>
                 <SheetTitle className="text-foreground">Menu</SheetTitle>
               </SheetHeader>
-              <nav className="flex flex-col gap-2 mt-6">
+              <nav className="flex flex-col gap-1 mt-6">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-base text-foreground px-4 py-3 rounded-md transition-transform hover:scale-105 origin-left"
-                    onClick={() => setOpen(false)}
-                  >
+                    className="text-base text-foreground px-4 py-3 rounded-lg transition-all hover:bg-muted hover:pl-6"
+                    onClick={() => setOpen(false)}>
                     {link.label}
                   </Link>
                 ))}
-                <div className="flex items-center gap-4 text-base text-foreground px-4 py-3 rounded-md transition-transform hover:scale-105 origin-left cursor-pointer ">
+                <div className="flex items-center justify-between text-base text-foreground px-4 py-3 rounded-lg hover:bg-muted transition-colors mt-4 border-t pt-6">
                   <span>Theme</span>
                   <ThemeToggle />
                 </div>

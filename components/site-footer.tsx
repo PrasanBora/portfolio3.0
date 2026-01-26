@@ -1,5 +1,13 @@
-"use client"
-import { Mail, FileText, Github, Linkedin, Code2, Instagram } from "lucide-react"
+"use client";
+
+import {
+  Mail,
+  FileText,
+  Github,
+  Linkedin,
+  Code2,
+  Instagram,
+} from "lucide-react";
 
 export function SiteFooter() {
   const socialLinks = [
@@ -13,7 +21,7 @@ export function SiteFooter() {
       href: "https://github.com/PrasanBora",
       icon: Github,
       label: "GitHub",
-      hoverColor: "hover:text-[#333]",
+      hoverColor: "hover:text-[#333] dark:hover:text-white",
     },
     {
       href: "https://leetcode.com/u/unknown__/",
@@ -27,53 +35,113 @@ export function SiteFooter() {
       label: "Instagram",
       hoverColor: "hover:text-[#e4405f]",
     },
-  ]
+  ];
 
   return (
     <footer id="footer" className="border-t border-border bg-background">
-      <div className="mx-auto max-w-6xl px-4 py-10 md:py-12">
-        <h2 className="text-xl md:text-2xl font-semibold mb-6">Thanks for stopping by, let&apos;s chat!</h2>
-
-        <div className="grid gap-6 md:grid-cols-2 items-start mb-8">
-          <div className="flex items-center gap-3">
-            <Mail className="h-5 w-5 text-muted-foreground" aria-hidden />
-            <a className="hover:underline hover:text-primary transition-colors" href="mailto:prasanbora23@gmail.com">
-              prasanbora23@gmail.com
-            </a>
+      <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
+        {/* Main Footer Content */}
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 mb-12">
+          {/* Brand Column */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="h-3 w-3 rounded-full bg-primary" aria-hidden />
+              <span className="font-semibold text-lg">Prasan Bora</span>
+            </div>
+            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+              Developer based in India. I like building things,
+              learning new stuff, and good coffee.
+            </p>
+            {/* Social Links */}
+            <div className="flex items-center gap-4">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.href}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`text-muted-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-0.5 ${social.hoverColor}`}
+                    aria-label={social.label}>
+                    <Icon className="h-5 w-5" />
+                  </a>
+                );
+              })}
+            </div>
           </div>
-          <div className="flex items-center gap-3">
-            <FileText className="h-5 w-5 text-muted-foreground" aria-hidden />
-            <a
-              className="hover:underline hover:text-primary transition-colors"
-              href="https://drive.google.com/file/d/1dPPUjzVTe544kEZB2ZwwFyqXBLDFQxXR/view"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Resume
-            </a>
+
+          {/* Quick Links Column */}
+          <div>
+            <h3 className="font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <a
+                  href="/about"
+                  className="text-muted-foreground hover:text-foreground transition-colors">
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/works"
+                  className="text-muted-foreground hover:text-foreground transition-colors">
+                  Works
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/projects"
+                  className="text-muted-foreground hover:text-foreground transition-colors">
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/tech-stack"
+                  className="text-muted-foreground hover:text-foreground transition-colors">
+                  Tech Stack
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Column */}
+          <div>
+            <h3 className="font-semibold mb-4">Get In Touch</h3>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <a
+                  className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                  href="mailto:prasanbora23@gmail.com">
+                  <Mail className="h-4 w-4" aria-hidden />
+                  prasanbora23@gmail.com
+                </a>
+              </li>
+              <li>
+                <a
+                  className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                  href="https://drive.google.com/file/d/1dPPUjzVTe544kEZB2ZwwFyqXBLDFQxXR/view"
+                  target="_blank"
+                  rel="noreferrer">
+                  <FileText className="h-4 w-4" aria-hidden />
+                  Download Resume
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="flex items-center gap-4 mb-8">
-          {socialLinks.map((social) => {
-            const Icon = social.icon
-            return (
-              <a
-                key={social.href}
-                href={social.href}
-                target="_blank"
-                rel="noreferrer"
-                className={`text-muted-foreground transition-all hover:scale-110 ${social.hoverColor}`}
-                aria-label={social.label}
-              >
-                <Icon className="h-5 w-5" />
-              </a>
-            )
-          })}
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} Prasan Bora. All rights reserved.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Built with Next.js & Tailwind CSS
+          </p>
         </div>
-
-        <p className="text-sm text-muted-foreground">© All rights reserved – Prasan Bora {new Date().getFullYear()}</p>
       </div>
     </footer>
-  )
+  );
 }

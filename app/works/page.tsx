@@ -1,38 +1,44 @@
-"use client"
+"use client";
 
-import { WorkCard } from "@/components/works/work-card"
+import { motion } from "framer-motion";
+import { WorkCard } from "@/components/works/work-card";
 
 export default function WorksPage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10 md:py-16">
-      <h1 className="text-3xl md:text-4xl font-semibold mb-6">Selected Works</h1>
+    <div className="mx-auto max-w-6xl px-4 section-padding">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="mb-12 md:mb-16">
+        <span className="eyebrow">Work</span>
+        <h1 className="section-heading mt-3">Selected Projects</h1>
+        <p className="lead mt-4 max-w-2xl">
+          A selection of projects I&apos;ve contributed to—from AI platforms
+          to client websites.
+        </p>
+      </motion.div>
 
-      <div className="space-y-10">
+      <div className="space-y-12">
         <WorkCard
           imageSrc="/images/works/chefadora-hero.png"
           imageAlt="Chefadora AI Cooking Assistant"
-          eyebrow="Product + AI"
-          title="Chefadora – AI Cooking Assistant"
-          subtitle="Building the future of cooking with AI"
-          description="Contributing across web and mobile to deliver intelligent recipe assistance, hands‑free mode, and a smoother, faster user experience."
-          role="Software Developer"
-          duration="2024–Present"
-          team="Chefadora"
+          eyebrow="AI Platform · 2024–Present"
+          title="Chefadora"
+          subtitle="AI-powered cooking assistant"
+          description="Built the Cooking Mode feature and AI agents that handle most of the platform's operations. Working across the full stack—React Native, Next.js, and Node.js."
           ctaHref="https://www.chefadora.com/cooking-ai"
-          ctaLabel="See related work"
+          ctaLabel="See the product"
         />
         <WorkCard
           imageSrc="/images/projects/physio-hero.png"
           imageAlt="Physiotherapy website hero"
-          eyebrow="Web Development"
-          title="Physiotherapy Clinic Website"
-          subtitle="Modern, accessible landing with strong value proposition"
-          description="A clean medical services site with clear hierarchy, responsive layouts, and focused CTAs to improve conversions and user trust."
-          role="Frontend Developer"
-          duration="2025"
-          team="Solo"
+          eyebrow="Client Work · 2025"
+          title="Korperheil"
+          subtitle="Physiotherapy clinic website"
+          description="A clean, fast website for a physiotherapy clinic. Focused on performance and getting visitors to book appointments."
           ctaHref="https://korperheil.com"
-          ctaLabel="View project"
+          ctaLabel="Visit site"
         />
       </div>
     </div>

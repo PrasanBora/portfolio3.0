@@ -15,20 +15,29 @@ import {
   Search,
   Container,
   TestTube,
+  Bot,
+  Box,
+  Figma,
+  Plug,
+  Bug,
+  Smartphone,
+  Send,
+  Github,
+  BarChart,
 } from "lucide-react";
 
 type Item = { title: string; desc: string; icon: React.ReactNode };
 
 const frontendSkills: Item[] = [
   {
-    title: "Tailwind CSS",
-    desc: "Utility-first CSS framework",
-    icon: <Palette className="size-5" />,
+    title: "JavaScript",
+    desc: "Core web language",
+    icon: <Code2 className="size-5" />,
   },
   {
-    title: "Bootstrap",
-    desc: "Responsive UI components",
-    icon: <Layout className="size-5" />,
+    title: "TypeScript",
+    desc: "Type-safe JavaScript",
+    icon: <Code2 className="size-5" />,
   },
   {
     title: "React.js",
@@ -45,18 +54,48 @@ const frontendSkills: Item[] = [
     desc: "Cross-platform mobile apps",
     icon: <Code2 className="size-5" />,
   },
+  {
+    title: "Expo",
+    desc: "React Native toolchain",
+    icon: <Smartphone className="size-5" />,
+  },
+  {
+    title: "Tailwind CSS",
+    desc: "Utility-first CSS framework",
+    icon: <Palette className="size-5" />,
+  },
 ];
 
 const backendSkills: Item[] = [
+  {
+    title: "C++",
+    desc: "Systems programming",
+    icon: <Code2 className="size-5" />,
+  },
+  {
+    title: "Node.js",
+    desc: "JavaScript runtime for servers",
+    icon: <Server className="size-5" />,
+  },
   {
     title: "Express.js",
     desc: "Fast Node.js web framework",
     icon: <Rocket className="size-5" />,
   },
   {
-    title: "Node.js",
-    desc: "JavaScript runtime for servers",
+    title: "NestJS",
+    desc: "Scalable Node.js framework",
     icon: <Server className="size-5" />,
+  },
+  {
+    title: "Socket.io",
+    desc: "Real-time communication",
+    icon: <Plug className="size-5" />,
+  },
+  {
+    title: "Prisma",
+    desc: "Type-safe database ORM",
+    icon: <Database className="size-5" />,
   },
   {
     title: "Strapi",
@@ -90,28 +129,63 @@ const toolsSkills: Item[] = [
     icon: <GitBranch className="size-5" />,
   },
   {
-    title: "SQL",
-    desc: "Database query language",
-    icon: <Database className="size-5" />,
+    title: "GitHub Actions",
+    desc: "CI/CD automation",
+    icon: <Github className="size-5" />,
   },
   {
-    title: "APIs",
-    desc: "RESTful & GraphQL integration",
-    icon: <Rocket className="size-5" />,
+    title: "Docker",
+    desc: "Container platform",
+    icon: <Box className="size-5" />,
   },
   {
-    title: "Testing",
-    desc: "Unit & integration testing",
+    title: "Jest",
+    desc: "JavaScript testing",
     icon: <TestTube className="size-5" />,
   },
   {
+    title: "Postman",
+    desc: "API development",
+    icon: <Send className="size-5" />,
+  },
+  {
+    title: "Sentry",
+    desc: "Error tracking",
+    icon: <Bug className="size-5" />,
+  },
+  {
+    title: "PostHog",
+    desc: "Product analytics",
+    icon: <BarChart className="size-5" />,
+  },
+  {
+    title: "Android Studio",
+    desc: "Android development IDE",
+    icon: <Smartphone className="size-5" />,
+  },
+  {
+    title: "Xcode",
+    desc: "iOS development IDE",
+    icon: <Smartphone className="size-5" />,
+  },
+  {
+    title: "OpenAI API",
+    desc: "AI integrations",
+    icon: <Bot className="size-5" />,
+  },
+  {
+    title: "Figma",
+    desc: "Design to code",
+    icon: <Figma className="size-5" />,
+  },
+  {
     title: "AWS",
-    desc: "Cloud infrastructure services",
+    desc: "Cloud infrastructure",
     icon: <Cloud className="size-5" />,
   },
   {
     title: "Vercel",
-    desc: "Deployment & hosting platform",
+    desc: "Deployment platform",
     icon: <Cloud className="size-5" />,
   },
   {
@@ -123,34 +197,34 @@ const toolsSkills: Item[] = [
 
 const services: Item[] = [
   {
-    title: "Custom Website Design",
-    desc: "Visually engaging, user‑focused experiences.",
+    title: "Web Apps",
+    desc: "Full websites or specific features.",
     icon: <Layout className="size-5" />,
   },
   {
-    title: "Responsive Development",
-    desc: "Seamless across all devices.",
-    icon: <Cloud className="size-5" />,
+    title: "Mobile Apps",
+    desc: "React Native, iOS and Android.",
+    icon: <Code2 className="size-5" />,
   },
   {
-    title: "Cutting‑edge Tech",
-    desc: "Dynamic sites with React & Next.js.",
-    icon: <Rocket className="size-5" />,
+    title: "Backend & APIs",
+    desc: "The stuff that makes apps work.",
+    icon: <Server className="size-5" />,
   },
   {
-    title: "Performance Optimization",
-    desc: "Lightning‑fast, optimized builds.",
+    title: "Performance Fixes",
+    desc: "Making slow things fast.",
     icon: <Cpu className="size-5" />,
   },
   {
-    title: "SEO‑friendly Development",
-    desc: "Search‑friendly websites.",
-    icon: <Search className="size-5" />,
+    title: "Technical Consulting",
+    desc: "Advice on architecture decisions.",
+    icon: <Rocket className="size-5" />,
   },
   {
-    title: "Ongoing Support",
-    desc: "Care beyond deployment.",
-    icon: <Server className="size-5" />,
+    title: "Code Reviews",
+    desc: "Second pair of eyes on your code.",
+    icon: <Search className="size-5" />,
   },
 ];
 
@@ -160,13 +234,15 @@ function SectionGrid({ items }: { items: Item[] }) {
       {items.map((it, i) => (
         <motion.div
           key={it.title}
-          className="rounded-xl border bg-card p-5 shadow-sm hover:shadow-md transition-shadow"
+          className="rounded-xl border bg-card p-5 shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 hover:border-primary/30 group"
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
           transition={{ duration: 0.35, delay: i * 0.05 }}>
           <div className="mb-3 flex items-center gap-2 text-primary">
-            {it.icon}
+            <span className="transition-transform duration-300 group-hover:scale-110">
+              {it.icon}
+            </span>
             <h3 className="text-base font-semibold">{it.title}</h3>
           </div>
           <p className="text-sm text-muted-foreground">{it.desc}</p>
@@ -178,34 +254,38 @@ function SectionGrid({ items }: { items: Item[] }) {
 
 export function SkillsAndServices() {
   return (
-    <main className="container mx-auto max-w-5xl space-y-12 px-4 py-12">
-      <section className="space-y-2">
-        <motion.h1
-          className="text-balance text-3xl font-bold md:text-4xl"
+    <main className="container mx-auto max-w-5xl space-y-16 px-4 section-padding">
+      <section className="space-y-4">
+        <motion.span
+          className="eyebrow"
           initial={{ opacity: 0, y: 8 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35 }}>
-          Skills — Tech Stacks
+          Tech Stack
+        </motion.span>
+        <motion.h1
+          className="section-heading"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, delay: 0.05 }}>
+          What I work with
         </motion.h1>
         <motion.p
-          className="text-muted-foreground"
+          className="lead max-w-2xl"
           initial={{ opacity: 0, y: 8 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.35, delay: 0.05 }}>
-          Tools and technologies I use to design, build, and ship reliable
-          products.
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, delay: 0.1 }}>
+          I pick tools based on what the job needs, not what&apos;s trendy.
+          Here&apos;s what I actually use day to day.
         </motion.p>
       </section>
 
       <section className="space-y-6">
         <motion.h2
-          className="text-xl font-semibold"
+          className="text-2xl font-bold"
           initial={{ opacity: 0, y: 8 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.35 }}>
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, delay: 0.15 }}>
           Frontend
         </motion.h2>
         <SectionGrid items={frontendSkills} />
@@ -213,7 +293,7 @@ export function SkillsAndServices() {
 
       <section className="space-y-6">
         <motion.h2
-          className="text-xl font-semibold"
+          className="text-2xl font-bold"
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -225,7 +305,7 @@ export function SkillsAndServices() {
 
       <section className="space-y-6">
         <motion.h2
-          className="text-xl font-semibold"
+          className="text-2xl font-bold"
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -237,7 +317,7 @@ export function SkillsAndServices() {
 
       <section className="space-y-6">
         <motion.h2
-          className="text-xl font-semibold"
+          className="text-2xl font-bold"
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -247,23 +327,31 @@ export function SkillsAndServices() {
         <SectionGrid items={toolsSkills} />
       </section>
 
-      <section className="space-y-2 pt-4">
-        <motion.h2
-          className="text-2xl font-semibold md:text-3xl"
+      <section className="space-y-4 pt-8 border-t border-border">
+        <motion.span
+          className="eyebrow"
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.35 }}>
-          What I can do — Services
-        </motion.h2>
-        <motion.p
-          className="text-muted-foreground"
+          Freelance
+        </motion.span>
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold"
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.35, delay: 0.05 }}>
-          I specialize in crafting high‑quality, bespoke websites that leave a
-          lasting impression.
+          How I can help
+        </motion.h2>
+        <motion.p
+          className="lead max-w-2xl"
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.35, delay: 0.1 }}>
+          If you need a developer who can own a project from start to finish,
+          here&apos;s what I typically take on.
         </motion.p>
       </section>
 
