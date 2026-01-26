@@ -18,7 +18,7 @@ export default function WorksPage() {
           role="Software Developer"
           duration="2024–Present"
           team="Chefadora"
-          ctaHref="/projects"
+          ctaHref="https://www.chefadora.com/cooking-ai"
           ctaLabel="See related work"
         />
         <WorkCard
@@ -31,7 +31,7 @@ export default function WorksPage() {
           role="Frontend Developer"
           duration="2025"
           team="Solo"
-          ctaHref="/projects"
+          ctaHref="https://korperheil.com"
           ctaLabel="View project"
         />
       </div>
