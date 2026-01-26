@@ -66,6 +66,27 @@ export default function AboutPage() {
                 transition={{ duration: 0.3, delay: 0.15 }}>
                 Set up CI/CD so deployments stopped being painful
               </motion.li>
+              <motion.li
+                initial={{ opacity: 0, y: 6 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: 0.2 }}>
+                Built scalable backend APIs and system architecture that kept up with rapid product growth
+              </motion.li>
+              <motion.li
+                initial={{ opacity: 0, y: 6 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: 0.25 }}>
+                Set up the staging environment so the team could test without breaking prod
+              </motion.li>
+              <motion.li
+                initial={{ opacity: 0, y: 6 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: 0.3 }}>
+                Integrated PostHog for data-driven decisions and product improvements
+              </motion.li>
             </ul>
           </div>
           <motion.p
