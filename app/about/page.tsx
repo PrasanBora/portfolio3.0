@@ -26,7 +26,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.35 }}>
             I&apos;m a software engineer who builds products across the full stack.
-            React Native for mobile, Next.js for web, Node.js for backend.
+            React Native for mobile, Next.js for web, NestJS and Prisma for backend.
             Whatever the problem needs.
           </motion.p>
           <motion.p
