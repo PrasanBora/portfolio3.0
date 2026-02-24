@@ -40,6 +40,17 @@ export default function WorksPage() {
           ctaHref="https://korperheil.com"
           ctaLabel="Visit site"
         />
+        <WorkCard
+          imageSrc="/images/works/himalayan-valley-hero.png"
+          imageAlt="Himalayan Valley tea e-commerce platform"
+          eyebrow="E-Commerce · 2025"
+          title="Himalayan Valley"
+          subtitle="Premium tea e-commerce platform"
+          description="Developed a full-stack e-commerce platform for a Himalayan tea brand. Built a custom product catalog with server-side rendering for SEO, integrated cart and checkout flow, and implemented a dynamic blog system (TeaTales) with a headless CMS. Optimized Core Web Vitals with lazy-loaded images and edge caching."
+          ctaHref="https://www.himalayanvalleyproduct.com/"
+          ctaLabel="Visit site"
+          tags={["Next.js", "TypeScript", "Tailwind CSS", "Stripe"]}
+        />
       </div>
     </div>
   )

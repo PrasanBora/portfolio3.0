@@ -7,6 +7,7 @@ export type TimelineItem = {
   org?: string
   period?: string
   summary?: string
+  achievements?: string[]
 }
 
 const itemVariants = {
@@ -38,6 +39,13 @@ export function CareerTimelineFixed({ items }: { items: TimelineItem[] }) {
               {it.title} {it.org ? <span className="text-muted-foreground">· {it.org}</span> : null}
             </h3>
             {it.summary ? <p className="mt-1 text-muted-foreground">{it.summary}</p> : null}
+            {it.achievements && it.achievements.length > 0 ? (
+              <ul className="mt-2 space-y-1 list-disc pl-4">
+                {it.achievements.map((a, i) => (
+                  <li key={i} className="text-sm text-muted-foreground">{a}</li>
+                ))}
+              </ul>
+            ) : null}
           </motion.li>
         ))}
       </ul>

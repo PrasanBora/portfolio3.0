@@ -165,35 +165,58 @@ export default function AboutPage() {
                     org: "Chefadora",
                     period: "Nov 2024 – Present",
                     summary:
-                      "Developing and maintaining Chefadora's web platform and mobile app; backend APIs, integrations, and shipping features from Figma to production.",
+                      "Building scalable backend services, delivering seamless mobile/web experiences, and driving innovation through automation and AI-driven systems.",
+                    achievements: [
+                      "Built AI agents that automated 80% of manual operations",
+                      "Collaborated directly with founders to shape product strategy and ship impactful features to a global audience",
+                      "Shipped the Cooking Mode feature from zero to production",
+                      "Set up CI/CD pipelines and staging environment for the team",
+                      "Integrated PostHog for data-driven product decisions",
+                    ],
                   },
                   {
                     title: "Software Developer",
                     org: "Zarle Infotech",
                     period: "Nov 2024 – Present",
                     summary:
-                      "TypeScript, Vercel and more; contributing to full‑stack initiatives. Hybrid, Noida.",
+                      "Contributing to full‑stack initiatives using TypeScript, Vercel and more. Hybrid, Noida.",
+                    achievements: [
+                      "Built scalable backend APIs and system architecture that kept up with rapid product growth",
+                      "Fixed performance issues impacting mobile app responsiveness",
+                    ],
                   },
                   {
                     title: "Web Developer (Intern)",
                     org: "CantiLever.in",
                     period: "Aug 2024",
                     summary:
-                      "Built MERN stack applications; collaborated across teams to design and deliver features.",
+                      "Collaborated with team to design and develop full-stack web applications using the MERN stack.",
+                    achievements: [
+                      "Built full-stack apps with MongoDB, Express.js, React, and Node.js",
+                    ],
                   },
                   {
                     title: "Head of Public Relations",
                     org: "MAIT Alumni Cell",
                     period: "May 2023 – Jun 2024",
                     summary:
-                      "Led PR team; managed social media, content design, and branding for alumni community.",
+                      "Led the PR team overseeing Public Relations, design projects, content creation, and social media management.",
+                    achievements: [
+                      "Directed team efforts to shape institute communications to the community",
+                      "Managed social media platforms and built an interactive online space for alumni",
+                    ],
                   },
                   {
                     title: "Design Team Member",
                     org: "MAIT Alumni Cell",
-                    period: "Jan 2023 – Jun 2024",
+                    period: "Jan 2023 – Jan 2024",
                     summary:
                       "Created social posts, event assets, and coordinated cross‑team design integrations.",
+                    achievements: [
+                      "Created eye-catching posts for social media with mobile-friendly designs",
+                      "Designed invitations and banners for alumni events",
+                      "Worked closely with marketing, communication, and events teams for seamless design integration",
+                    ],
                   },
                   {
                     title: "Campus Ambassador",
@@ -201,13 +224,21 @@ export default function AboutPage() {
                     period: "Dec 2021 – Feb 2022",
                     summary:
                       "Organized campus events and managed social media outreach to drive engagement.",
+                    achievements: [
+                      "Organized campus-wide promotional events, workshops, and informational sessions",
+                      "Leveraged social media to drive increased online visibility and engagement for Shaastra",
+                    ],
                   },
                   {
                     title: "Operations Intern",
                     org: "Jacq",
                     period: "Nov 2021 – Jan 2022",
                     summary:
-                      "Hands‑on with e‑commerce ops, WordPress site management, and product onboarding.",
+                      "Hands‑on with e-commerce ops, WordPress site management, and product onboarding.",
+                    achievements: [
+                      "Gained insights into e-commerce, marketing, and cloth printing operations",
+                      "Managed WordPress backend — adding products and optimizing user experience",
+                    ],
                   },
                 ]}
               />

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Menu, Mail, Github, Linkedin } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import {
   Sheet,
@@ -11,6 +11,24 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+
+const socialLinks = [
+  {
+    href: "mailto:prasanbora23@gmail.com",
+    icon: Mail,
+    label: "Email",
+  },
+  {
+    href: "https://github.com/PrasanBora",
+    icon: Github,
+    label: "GitHub",
+  },
+  {
+    href: "https://www.linkedin.com/in/prasan-bora-943293184/",
+    icon: Linkedin,
+    label: "LinkedIn",
+  },
+];
 
 const navLinks = [
   { href: "/about", label: "About" },
@@ -45,7 +63,30 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
+          {/* Desktop Social Icons */}
+          <div className="hidden md:flex items-center gap-1">
+            {socialLinks.map((social) => {
+              const Icon = social.icon;
+              return (
+                <Link
+                  key={social.href}
+                  href={social.href}
+                  target={social.href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel={social.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                  className="p-2 rounded-md text-muted-foreground transition-colors hover:text-foreground"
+                  aria-label={social.label}>
+                  <Icon className="h-4 w-4" />
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Desktop Theme Toggle */}
+          <div className="hidden md:block">
+            <ThemeToggle />
+          </div>
+
           {/* Mobile Menu */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild className="md:hidden">
@@ -70,18 +111,30 @@ export function SiteHeader() {
                     {link.label}
                   </Link>
                 ))}
-                <div className="flex items-center justify-between text-base text-foreground px-4 py-3 rounded-lg hover:bg-muted transition-colors mt-4 border-t pt-6">
+                <div className="flex items-center gap-3 px-4 py-3 mt-4 border-t pt-6">
+                  {socialLinks.map((social) => {
+                    const Icon = social.icon;
+                    return (
+                      <Link
+                        key={social.href}
+                        href={social.href}
+                        target={social.href.startsWith("mailto:") ? undefined : "_blank"}
+                        rel={social.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                        className="p-2 rounded-md text-muted-foreground transition-colors hover:text-foreground"
+                        aria-label={social.label}
+                        onClick={() => setOpen(false)}>
+                        <Icon className="h-5 w-5" />
+                      </Link>
+                    );
+                  })}
+                </div>
+                <div className="flex items-center justify-between text-base text-foreground px-4 py-3 rounded-lg hover:bg-muted transition-colors">
                   <span>Theme</span>
                   <ThemeToggle />
                 </div>
               </nav>
             </SheetContent>
           </Sheet>
-
-          {/* Desktop Theme Toggle */}
-          <div className="hidden md:block">
-            <ThemeToggle />
-          </div>
         </div>
       </div>
     </header>

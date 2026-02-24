@@ -1,9 +1,10 @@
 "use client";
 
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const featuredWorks = [
@@ -29,29 +30,41 @@ const featuredWorks = [
     href: "https://korperheil.com",
     tags: ["Next.js", "Tailwind CSS"],
   },
+  {
+    id: 3,
+    category: "E-Commerce",
+    title: "Himalayan Valley",
+    subtitle: "Premium tea e-commerce platform",
+    description:
+      "Developed a full-stack e-commerce platform for a Himalayan tea brand. Built a custom product catalog with SSR for SEO, integrated cart and checkout flow, and implemented a dynamic blog system (TeaTales) with a headless CMS.",
+    image: "/images/works/himalayan-valley-hero.png",
+    href: "https://www.himalayanvalleyproduct.com/",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
+  },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.1,
-    },
-  },
-};
-
 const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, x: 40 },
   visible: {
     opacity: 1,
-    y: 0,
+    x: 0,
     transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
 export function FeaturedWork() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (!scrollRef.current) return;
+    const cardWidth = scrollRef.current.firstElementChild?.clientWidth ?? 400;
+    const gap = 32;
+    scrollRef.current.scrollBy({
+      left: direction === "left" ? -(cardWidth + gap) : cardWidth + gap,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="section-padding">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
@@ -65,40 +78,58 @@ export function FeaturedWork() {
             <span className="eyebrow">Portfolio</span>
             <h2 className="section-heading mt-3">Featured Work</h2>
           </div>
-          <Button
-            asChild
-            variant="ghost"
-            className="hidden md:flex items-center gap-2 group">
-            <Link href="/works">
-              View All
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
+          <div className="flex items-center gap-2">
+            {/* Scroll arrows */}
+            <button
+              onClick={() => scroll("left")}
+              aria-label="Scroll left"
+              className="hidden md:flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              aria-label="Scroll right"
+              className="hidden md:flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+            <Button
+              asChild
+              variant="ghost"
+              className="hidden md:flex items-center gap-2 group ml-2">
+              <Link href="/works">
+                View All
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </div>
         </motion.div>
 
+        {/* Horizontal scroll container */}
         <motion.div
-          variants={containerVariants}
+          ref={scrollRef}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid gap-8 md:grid-cols-2">
+          transition={{ staggerChildren: 0.15, delayChildren: 0.1 }}
+          className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar"
+        >
           {featuredWorks.map((work) => (
             <motion.article
               key={work.id}
               variants={itemVariants}
-              className="group relative overflow-hidden rounded-2xl border bg-card transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2">
-              {/* Image Container */}
+              className="group relative shrink-0 w-[85vw] md:w-[calc(50%-0.75rem)] snap-start overflow-hidden rounded-2xl border bg-card transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2">
+              {/* Image */}
               <div className="relative aspect-16/10 overflow-hidden bg-muted">
                 <Image
                   src={work.image}
                   alt={work.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 85vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/20 to-transparent" />
-
-                {/* Floating tag */}
                 <span className="absolute top-4 left-4 px-3 py-1 text-xs font-medium bg-background/80 backdrop-blur-sm rounded-full border">
                   {work.category}
                 </span>
@@ -141,7 +172,7 @@ export function FeaturedWork() {
           ))}
         </motion.div>
 
-        {/* Mobile View All Button */}
+        {/* Mobile View All */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

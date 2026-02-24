@@ -169,6 +169,14 @@
   .section-padding-sm {
     @apply py-12 md:py-16;
   }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Shimmer animation for loading states */
