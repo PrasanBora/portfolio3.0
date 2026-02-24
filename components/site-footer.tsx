@@ -133,12 +133,9 @@ export function SiteFooter() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="pt-8 border-t border-border flex items-center justify-center">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Prasan Bora. All rights reserved.
-          </p>
-          <p className="text-sm text-muted-foreground">
-            Built with Next.js & Tailwind CSS
           </p>
         </div>
       </div>
