@@ -50,9 +50,8 @@ export function SiteFooter() {
               <span className="font-semibold text-lg">Prasan Bora</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Prasan Bora — Software Engineer & Full Stack Developer based in
-              India. Building web, mobile, and AI products with Next.js, React
-              Native, and TypeScript.
+              Software engineer based in India. I build web, mobile and AI
+              products — mostly with Next.js, React Native and TypeScript.
             </p>
             {/* Social Links */}
             <ul className="flex items-center gap-4 list-none p-0 m-0" aria-label="Prasan Bora on social media">
@@ -82,32 +81,28 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/about"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                  title="About Prasan Bora">
-                  About Prasan Bora
+                  className="text-muted-foreground hover:text-foreground transition-colors">
+                  About
                 </Link>
               </li>
               <li>
                 <Link
                   href="/works"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                  title="Selected work by Prasan Bora">
+                  className="text-muted-foreground hover:text-foreground transition-colors">
                   Selected Work
                 </Link>
               </li>
               <li>
                 <Link
                   href="/projects"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                  title="Side projects by Prasan Bora">
+                  className="text-muted-foreground hover:text-foreground transition-colors">
                   Side Projects
                 </Link>
               </li>
               <li>
                 <Link
                   href="/tech-stack"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                  title="Prasan Bora tech stack and skills">
+                  className="text-muted-foreground hover:text-foreground transition-colors">
                   Tech Stack
                 </Link>
               </li>
