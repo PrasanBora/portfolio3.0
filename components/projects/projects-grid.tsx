@@ -1,6 +1,7 @@
 "use client";
 
 import useSWR from "swr";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Calendar, ExternalLink, Github } from "lucide-react";
@@ -154,12 +155,17 @@ export function ProjectsGrid() {
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               >
-                <div className="overflow-hidden rounded-2xl border border-border/50 bg-muted/30 shadow-lg">
-                  <img
+                <div className="relative aspect-video overflow-hidden rounded-2xl border border-border/50 bg-muted/30 shadow-lg">
+                  <Image
                     src={project.image}
-                    alt={project.imageAlt || project.title}
+                    alt={
+                      project.imageAlt ||
+                      `${project.title} project by Prasan Bora`
+                    }
+                    fill
                     loading="lazy"
-                    className="w-full object-cover aspect-video transition-transform duration-500 hover:scale-105"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
               </motion.div>

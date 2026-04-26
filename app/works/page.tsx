@@ -1,57 +1,78 @@
-"use client";
+import type { Metadata } from "next";
+import WorksClient from "./works-client";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbJsonLd, buildMetadata, SITE, absoluteUrl } from "@/lib/seo";
 
-import { motion } from "framer-motion";
-import { WorkCard } from "@/components/works/work-card";
+export const metadata: Metadata = buildMetadata({
+  title: `Work — Selected Projects by Prasan Bora`,
+  description: `Selected work by ${SITE.fullName}: AI platforms, SaaS, e-commerce, and client websites built with Next.js, React Native, NestJS, and TypeScript.`,
+  path: "/works",
+  keywords: [
+    "Prasan Bora work",
+    "Prasan Bora projects",
+    "Prasan Bora portfolio",
+    "Chefadora developer",
+    "Korperheil website",
+    "Himalayan Valley e-commerce",
+    ...SITE.keywords,
+  ],
+});
+
+const works = [
+  {
+    name: "Chefadora",
+    url: "https://www.chefadora.com/cooking-ai",
+    image: absoluteUrl("/images/works/chefadora-hero.png"),
+    description:
+      "AI-powered cooking assistant. Built Cooking Mode and AI agents end-to-end.",
+  },
+  {
+    name: "Korperheil",
+    url: "https://korperheil.com",
+    image: absoluteUrl("/images/projects/physio-hero.png"),
+    description: "Physiotherapy clinic website focused on speed and conversions.",
+  },
+  {
+    name: "Himalayan Valley",
+    url: "https://www.himalayanvalleyproduct.com/",
+    image: absoluteUrl("/images/works/himalayan-valley-hero.png"),
+    description:
+      "Full-stack premium tea e-commerce platform with SSR, headless CMS, and edge caching.",
+  },
+];
+
+const itemListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: `Selected Work by ${SITE.fullName}`,
+  itemListOrder: "https://schema.org/ItemListOrderDescending",
+  numberOfItems: works.length,
+  itemListElement: works.map((w, idx) => ({
+    "@type": "ListItem",
+    position: idx + 1,
+    item: {
+      "@type": "CreativeWork",
+      name: w.name,
+      url: w.url,
+      image: w.image,
+      description: w.description,
+      author: { "@id": `${SITE.url}/#person` },
+    },
+  })),
+};
 
 export default function WorksPage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 section-padding">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="mb-12 md:mb-16">
-        <span className="eyebrow">Work</span>
-        <h1 className="section-heading mt-3">Selected Projects</h1>
-        <p className="lead mt-4 max-w-2xl">
-          A selection of projects I&apos;ve contributed to—from AI platforms
-          to client websites.
-        </p>
-      </motion.div>
-
-      <div className="space-y-12">
-        <WorkCard
-          imageSrc="/images/works/chefadora-hero.png"
-          imageAlt="Chefadora AI Cooking Assistant"
-          eyebrow="AI Platform · 2024–Present"
-          title="Chefadora"
-          subtitle="AI-powered cooking assistant"
-          description="Built the Cooking Mode feature and AI agents that handle most of the platform's operations. Working across the full stack—React Native, Next.js, and Node.js."
-          ctaHref="https://www.chefadora.com/cooking-ai"
-          ctaLabel="See the product"
-        />
-        <WorkCard
-          imageSrc="/images/projects/physio-hero.png"
-          imageAlt="Physiotherapy website hero"
-          eyebrow="Client Work · 2025"
-          title="Korperheil"
-          subtitle="Physiotherapy clinic website"
-          description="A clean, fast website for a physiotherapy clinic. Focused on performance and getting visitors to book appointments."
-          ctaHref="https://korperheil.com"
-          ctaLabel="Visit site"
-        />
-        <WorkCard
-          imageSrc="/images/works/himalayan-valley-hero.png"
-          imageAlt="Himalayan Valley tea e-commerce platform"
-          eyebrow="E-Commerce · 2025"
-          title="Himalayan Valley"
-          subtitle="Premium tea e-commerce platform"
-          description="Developed a full-stack e-commerce platform for a Himalayan tea brand. Built a custom product catalog with server-side rendering for SEO, integrated cart and checkout flow, and implemented a dynamic blog system (TeaTales) with a headless CMS. Optimized Core Web Vitals with lazy-loaded images and edge caching."
-          ctaHref="https://www.himalayanvalleyproduct.com/"
-          ctaLabel="Visit site"
-          tags={["Next.js", "TypeScript", "Tailwind CSS", "Stripe"]}
-        />
-      </div>
-    </div>
-  )
+    <>
+      <JsonLd
+        id="ld-works-breadcrumb"
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Work", path: "/works" },
+        ])}
+      />
+      <JsonLd id="ld-works-list" data={itemListJsonLd} />
+      <WorksClient />
+    </>
+  );
 }

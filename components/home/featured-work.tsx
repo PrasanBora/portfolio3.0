@@ -16,6 +16,8 @@ const featuredWorks = [
     description:
       "Built the Cooking Mode feature and AI agents that handle most of the platform's operations. Working across the full stack—React Native, Next.js, and Node.js.",
     image: "/images/works/chefadora-hero.png",
+    imageAlt:
+      "Chefadora AI cooking assistant — Prasan Bora built the Cooking Mode feature and AI agents",
     href: "https://www.chefadora.com/cooking-ai",
     tags: ["React Native", "Next.js", "Node.js"],
   },
@@ -27,6 +29,8 @@ const featuredWorks = [
     description:
       "A clean, fast website for a physiotherapy clinic. Focused on performance and getting visitors to book appointments.",
     image: "/images/projects/physio-hero.png",
+    imageAlt:
+      "Korperheil physiotherapy clinic website built by Prasan Bora",
     href: "https://korperheil.com",
     tags: ["Next.js", "Tailwind CSS"],
   },
@@ -38,6 +42,8 @@ const featuredWorks = [
     description:
       "Developed a full-stack e-commerce platform for a Himalayan tea brand. Built a custom product catalog with SSR for SEO, integrated cart and checkout flow, and implemented a dynamic blog system (TeaTales) with a headless CMS.",
     image: "/images/works/himalayan-valley-hero.png",
+    imageAlt:
+      "Himalayan Valley premium tea e-commerce platform developed by Prasan Bora",
     href: "https://www.himalayanvalleyproduct.com/",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
   },
@@ -124,10 +130,11 @@ export function FeaturedWork() {
               <div className="relative aspect-16/10 overflow-hidden bg-muted">
                 <Image
                   src={work.image}
-                  alt={work.title}
+                  alt={work.imageAlt}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 85vw, 50vw"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/20 to-transparent" />
                 <span className="absolute top-4 left-4 px-3 py-1 text-xs font-medium bg-background/80 backdrop-blur-sm rounded-full border">

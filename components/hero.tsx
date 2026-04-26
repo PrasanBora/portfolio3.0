@@ -11,7 +11,7 @@ import { ArrowRight } from "lucide-react";
 export function Hero() {
   return (
     <section
-      aria-label="Hero"
+      aria-labelledby="hero-heading"
       className="relative overflow-hidden border-b border-border">
       <div className="relative w-full min-h-screen">
         <LiquidEther
@@ -35,28 +35,34 @@ export function Hero() {
 
         <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none px-4">
           <div className="mx-auto max-w-4xl flex flex-col items-center text-center gap-8 md:gap-10">
-            <motion.div
+            <motion.p
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className="flex items-center gap-3 flex-wrap justify-center text-sm md:text-base text-muted-foreground">
+              className="flex items-center gap-3 flex-wrap justify-center text-sm md:text-base text-muted-foreground m-0">
               <span>Software Engineer</span>
               <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden />
-              <span>Full Stack</span>
+              <span>Full Stack Developer</span>
               <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden />
               <span>India</span>
-            </motion.div>
+            </motion.p>
 
             <motion.h1
+              id="hero-heading"
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance"
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.15 }}>
-              <Typewriter
-                text={"Hi, I'm Prasan"}
-                speed={200}
-                showCursor={false}
-              />
+              <span className="sr-only">
+                Prasan Bora — Software Engineer & Full Stack Developer
+              </span>
+              <span aria-hidden>
+                <Typewriter
+                  text={"Hi, I'm Prasan Bora"}
+                  speed={150}
+                  showCursor={false}
+                />
+              </span>
             </motion.h1>
 
             <motion.p
@@ -64,8 +70,9 @@ export function Hero() {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}>
-              I build products people actually use. Web apps, mobile apps, backend systems,
-              AI integrations—whatever the problem needs. Clean code, shipped fast.
+              I&apos;m Prasan Bora — a software engineer building web apps,
+              mobile apps, backend systems, and AI integrations. Clean code,
+              shipped fast, with Next.js, React Native, NestJS, and TypeScript.
             </motion.p>
 
             <motion.div
@@ -77,9 +84,9 @@ export function Hero() {
                 asChild
                 size="lg"
                 className="rounded-full px-8 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5">
-                <Link href="/works">
+                <Link href="/works" title="See selected work by Prasan Bora">
                   View My Work
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
                 </Link>
               </Button>
               <Button
@@ -87,7 +94,7 @@ export function Hero() {
                 variant="outline"
                 size="lg"
                 className="rounded-full px-8 border-2 hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:-translate-y-0.5">
-                <Link href="/#footer">Let&apos;s Connect</Link>
+                <Link href="/#footer" title="Contact Prasan Bora">Let&apos;s Connect</Link>
               </Button>
             </motion.div>
           </div>

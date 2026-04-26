@@ -1,6 +1,5 @@
-import { redirect } from "next/navigation"
+import { permanentRedirect } from "next/navigation";
 
-export default function Page() {
-  redirect("/tech-stack")
-  return null
+export default function SkillsRedirect(): never {
+  permanentRedirect("/tech-stack");
 }

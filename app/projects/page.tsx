@@ -1,51 +1,32 @@
-"use client";
+import type { Metadata } from "next";
+import ProjectsClient from "./projects-client";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbJsonLd, buildMetadata, SITE } from "@/lib/seo";
 
-import { motion } from "framer-motion";
-import { ProjectsGrid } from "@/components/projects/projects-grid";
-import { Button } from "@/components/ui/button";
-import { Github } from "lucide-react";
+export const metadata: Metadata = buildMetadata({
+  title: `Projects by Prasan Bora — Open Source & Side Projects`,
+  description: `Open-source side projects by ${SITE.fullName}: full-stack apps, real-time chat, browser extensions, games, and more — all built to learn and ship.`,
+  path: "/projects",
+  keywords: [
+    "Prasan Bora projects",
+    "Prasan Bora open source",
+    "Prasan Bora GitHub",
+    "Prasan Bora side projects",
+    ...SITE.keywords,
+  ],
+});
 
 export default function ProjectsPage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 section-padding">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="mb-16 md:mb-24">
-        <span className="eyebrow">Side Projects</span>
-        <h1 className="section-heading mt-3">Stuff I built to learn</h1>
-        <p className="lead mt-4 max-w-2xl">
-          Not everything needs a business case. These are projects I built
-          because I wanted to understand how something works.
-        </p>
-      </motion.div>
-
-      <ProjectsGrid />
-
-      {/* GitHub CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="mt-28 md:mt-36 text-center"
-      >
-        <p className="text-muted-foreground text-lg max-w-md mx-auto">
-          Want to see more? Check out my GitHub for additional projects and
-          contributions.
-        </p>
-        <Button asChild size="lg" className="mt-6">
-          <a
-            href="https://github.com/PrasanBora"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Github className="mr-2 h-5 w-5" />
-            View All Projects
-          </a>
-        </Button>
-      </motion.div>
-    </div>
+    <>
+      <JsonLd
+        id="ld-projects-breadcrumb"
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Projects", path: "/projects" },
+        ])}
+      />
+      <ProjectsClient />
+    </>
   );
 }

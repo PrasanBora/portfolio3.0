@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   Mail,
   FileText,
@@ -49,71 +50,79 @@ export function SiteFooter() {
               <span className="font-semibold text-lg">Prasan Bora</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Developer based in India. I like building things,
-              learning new stuff, and good coffee.
+              Prasan Bora — Software Engineer & Full Stack Developer based in
+              India. Building web, mobile, and AI products with Next.js, React
+              Native, and TypeScript.
             </p>
             {/* Social Links */}
-            <div className="flex items-center gap-4">
+            <ul className="flex items-center gap-4 list-none p-0 m-0" aria-label="Prasan Bora on social media">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
                 return (
-                  <a
-                    key={social.href}
-                    href={social.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={`text-muted-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-0.5 ${social.hoverColor}`}
-                    aria-label={social.label}>
-                    <Icon className="h-5 w-5" />
-                  </a>
+                  <li key={social.href}>
+                    <a
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer me"
+                      className={`text-muted-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-0.5 ${social.hoverColor}`}
+                      aria-label={`Prasan Bora on ${social.label}`}
+                      title={`Prasan Bora on ${social.label}`}>
+                      <Icon className="h-5 w-5" aria-hidden />
+                    </a>
+                  </li>
                 );
               })}
-            </div>
-          </div>
-
-          {/* Quick Links Column */}
-          <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <a
-                  href="/about"
-                  className="text-muted-foreground hover:text-foreground transition-colors">
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/works"
-                  className="text-muted-foreground hover:text-foreground transition-colors">
-                  Works
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/projects"
-                  className="text-muted-foreground hover:text-foreground transition-colors">
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/tech-stack"
-                  className="text-muted-foreground hover:text-foreground transition-colors">
-                  Tech Stack
-                </a>
-              </li>
             </ul>
           </div>
 
+          {/* Quick Links Column */}
+          <nav aria-label="Footer">
+            <h2 className="font-semibold mb-4 text-base">Quick Links</h2>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link
+                  href="/about"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  title="About Prasan Bora">
+                  About Prasan Bora
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/works"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  title="Selected work by Prasan Bora">
+                  Selected Work
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/projects"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  title="Side projects by Prasan Bora">
+                  Side Projects
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tech-stack"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  title="Prasan Bora tech stack and skills">
+                  Tech Stack
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
           {/* Contact Column */}
           <div>
-            <h3 className="font-semibold mb-4">Get In Touch</h3>
+            <h2 className="font-semibold mb-4 text-base">Get In Touch</h2>
             <ul className="space-y-3 text-sm">
               <li>
                 <a
                   className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                  href="mailto:prasanbora23@gmail.com">
+                  href="mailto:prasanbora23@gmail.com"
+                  aria-label="Email Prasan Bora at prasanbora23@gmail.com">
                   <Mail className="h-4 w-4" aria-hidden />
                   prasanbora23@gmail.com
                 </a>
@@ -123,7 +132,8 @@ export function SiteFooter() {
                   className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                   href="https://drive.google.com/file/d/1dPPUjzVTe544kEZB2ZwwFyqXBLDFQxXR/view"
                   target="_blank"
-                  rel="noreferrer">
+                  rel="noopener noreferrer"
+                  aria-label="Download Prasan Bora's resume (PDF)">
                   <FileText className="h-4 w-4" aria-hidden />
                   Download Resume
                 </a>

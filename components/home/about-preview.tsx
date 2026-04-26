@@ -70,7 +70,7 @@ export function AboutPreview() {
             <div className="relative aspect-4/5 rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
               <Image
                 src="/images/profile/profile.png"
-                alt="Prasan Bora - Software Engineer"
+                alt="Prasan Bora — Software Engineer and Full Stack Developer"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -104,7 +104,7 @@ export function AboutPreview() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="section-heading mt-3 mb-6">
-              I like building things that work
+              About Prasan Bora — building things that work
             </motion.h2>
 
             <motion.p
@@ -112,9 +112,10 @@ export function AboutPreview() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.15 }}
               className="lead mb-8">
-              I work across the entire stack—mobile, web, backend, AI. I&apos;ve shipped
-              features used by real people, fixed bugs at 2am, and learned that
-              good code is code that actually solves the problem.
+              Prasan Bora is a software engineer working across the entire
+              stack — mobile, web, backend, AI. Shipped features used by real
+              people, fixed bugs at 2am, and learned that good code is code
+              that actually solves the problem.
             </motion.p>
 
             {/* Highlight Cards */}

@@ -1,34 +1,24 @@
-"use client";
+import type { Metadata } from "next";
+import HomeClient from "./home-client";
+import { JsonLd } from "@/components/seo/json-ld";
+import {
+  buildMetadata,
+  professionalServiceJsonLd,
+  SITE,
+} from "@/lib/seo";
 
-import { useEffect } from "react";
-import { Hero } from "@/components/hero";
-import ScrollToTop from "@/components/ui/scroll-to-top";
-import { AboutPreview } from "@/components/home/about-preview";
-import { FeaturedWork } from "@/components/home/featured-work";
-import { CTASection } from "@/components/home/cta-section";
+export const metadata: Metadata = buildMetadata({
+  title: `${SITE.fullName} — ${SITE.role} | Portfolio`,
+  description: `${SITE.fullName} is a ${SITE.role} from India. Explore Prasan Bora's portfolio: featured work, projects, experience, and tech stack across web, mobile, and AI.`,
+  path: "/",
+  type: "profile",
+});
 
 export default function HomePage() {
-  useEffect(() => {
-    if (typeof document !== "undefined") {
-      document.documentElement.style.scrollBehavior = "smooth";
-    }
-  }, []);
-
   return (
-    <div className="bg-background text-foreground">
-      {/* 1. Hero Section */}
-      <Hero />
-
-      {/* 2. Featured Work Section */}
-      <FeaturedWork />
-
-      {/* 3. About Preview Section */}
-      <AboutPreview />
-
-      {/* 4. CTA Section */}
-      <CTASection />
-
-      <ScrollToTop />
-    </div>
+    <>
+      <JsonLd id="ld-service" data={professionalServiceJsonLd()} />
+      <HomeClient />
+    </>
   );
 }
