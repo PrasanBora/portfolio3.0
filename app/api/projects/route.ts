@@ -3,6 +3,28 @@ import { NextResponse } from "next/server"
 export async function GET() {
   const projects = [
     {
+      id: "video-caption-tool",
+      title: "Video Caption Tool",
+      date: "Feb 2026",
+      description:
+        "A web-based tool that extracts timestamped captions from video files using OpenAI Whisper. Runs locally with no API costs and supports Hindi, English, and auto language detection.",
+      features: [
+        "Whisper Transcription",
+        "Hindi & English Support",
+        "SRT / VTT / JSON Output",
+        "Drag-and-drop Upload",
+      ],
+      stats: [
+        { value: "Local processing", label: "Privacy" },
+        { value: "Multi-format export", label: "Output" },
+        { value: "Tiny → large-v3", label: "Models" },
+      ],
+      tech: ["Python", "Streamlit", "Whisper", "FFmpeg"],
+      tags: ["AI", "Tools"],
+      demo: "",
+      repo: "https://github.com/PrasanBora/video-caption-tool",
+    },
+    {
       id: "linkedin-clone",
       title: "LinkedIn Clone",
       date: "Oct 2024 - Nov 2024",
@@ -145,6 +167,50 @@ export async function GET() {
       repo: "https://github.com/PrasanBora/Pomorodo_extension",
       image: "/images/projects/pomodoro.jpg",
       imageAlt: "Pomodoro extension preview",
+    },
+    {
+      id: "frontend-design",
+      title: "Magma Clone",
+      date: "Apr 2024",
+      description:
+        "A pixel-faithful clone of thisismagma.com built to explore advanced web animation. Uses GSAP for sequenced motion, Locomotive Scroll for inertia, and Canvas for 3D-style scroll effects.",
+      features: [
+        "GSAP Animations",
+        "Locomotive Scroll",
+        "Canvas 3D Effects",
+        "Responsive Layout",
+      ],
+      stats: [
+        { value: "Pixel-faithful clone", label: "Approach" },
+        { value: "Smooth scroll", label: "UX" },
+        { value: "Pure JS", label: "Stack" },
+      ],
+      tech: ["HTML", "CSS", "JavaScript", "GSAP", "Locomotive Scroll"],
+      tags: ["Web", "Animation"],
+      demo: "https://prasanbora.github.io/frontend_design/",
+      repo: "https://github.com/PrasanBora/frontend_design",
+    },
+    {
+      id: "portfolio-2",
+      title: "Portfolio v2",
+      date: "Mar 2024",
+      description:
+        "The previous iteration of my personal portfolio. A vanilla HTML/CSS/JS site focused on hand-tuned animations and layout — the predecessor to this Next.js rebuild.",
+      features: [
+        "Custom Animations",
+        "Responsive Design",
+        "Hand-written CSS",
+        "Vercel Deploy",
+      ],
+      stats: [
+        { value: "No frameworks", label: "Stack" },
+        { value: "Static hosting", label: "Deploy" },
+        { value: "From scratch", label: "Approach" },
+      ],
+      tech: ["HTML", "CSS", "JavaScript"],
+      tags: ["Web", "Portfolio"],
+      demo: "https://prasan-bora-portfolio.vercel.app/",
+      repo: "https://github.com/PrasanBora/Portfolio2.O",
     },
   ]
   return NextResponse.json(projects)
