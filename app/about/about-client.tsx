@@ -15,9 +15,9 @@ export default function AboutClient() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
         className="mb-12 md:mb-16">
-        <span className="eyebrow">About Prasan Bora</span>
+        <span className="eyebrow">About</span>
         <h1 className="section-heading mt-3">
-          About Prasan Bora — Software Engineer & Full Stack Developer
+          Prasan Bora — Software Engineer
         </h1>
         <div className="mt-6 text-pretty text-muted-foreground md:text-lg space-y-4">
           <motion.p
@@ -25,16 +25,15 @@ export default function AboutClient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.35 }}>
-            I&apos;m Prasan Bora, a software engineer who builds products across the
-            full stack. React Native for mobile, Next.js for web, NestJS and Prisma
-            for backend. Whatever the problem needs.
+            Full stack. React Native on mobile, Next.js on the web, NestJS and
+            Prisma on the backend — whatever the problem actually needs.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.35, delay: 0.05 }}>
-            Some things I&apos;ve shipped:
+            Recent work:
           </motion.p>
           <div>
             <ul className="list-disc pl-5 leading-relaxed space-y-1">
@@ -43,49 +42,49 @@ export default function AboutClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3 }}>
-                Built AI agents that automated 80% of manual operations
+                AI agents that took ~80% of manual ops off the team
               </motion.li>
               <motion.li
                 initial={{ opacity: 0, y: 6 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: 0.05 }}>
-                Shipped the Cooking Mode feature from zero to production
+                Cooking Mode — built it from scratch and shipped to production
               </motion.li>
               <motion.li
                 initial={{ opacity: 0, y: 6 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: 0.1 }}>
-                Fixed performance issues that were making the mobile app slow
+                Mobile perf work — chased down the lag users were actually feeling
               </motion.li>
               <motion.li
                 initial={{ opacity: 0, y: 6 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: 0.15 }}>
-                Set up CI/CD so deployments stopped being painful
+                CI/CD pipeline so deploys stopped eating our afternoons
               </motion.li>
               <motion.li
                 initial={{ opacity: 0, y: 6 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: 0.2 }}>
-                Built scalable backend APIs and system architecture that kept up with rapid product growth
+                Backend APIs and architecture that held up as the product grew
               </motion.li>
               <motion.li
                 initial={{ opacity: 0, y: 6 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: 0.25 }}>
-                Set up the staging environment so the team could test without breaking prod
+                A staging environment so we could test without touching prod
               </motion.li>
               <motion.li
                 initial={{ opacity: 0, y: 6 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: 0.3 }}>
-                Integrated PostHog for data-driven decisions and product improvements
+                PostHog wired up so product calls had real numbers behind them
               </motion.li>
             </ul>
           </div>
@@ -94,16 +93,15 @@ export default function AboutClient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.35, delay: 0.05 }}>
-            Before this, I did an internship, ran PR for a college club, and built
-            random projects to learn things. Still doing that last part.
+            Before all this — an internship, PR lead for a college club, and a
+            pile of side projects. Still adding to that pile.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.35, delay: 0.1 }}>
-            I don&apos;t have a grand philosophy about code. I just try to build things
-            that work, learn from mistakes, and ship often.
+            Mostly I just like shipping things that work.
           </motion.p>
         </div>
       </motion.header>
